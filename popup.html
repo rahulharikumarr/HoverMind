@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explaina Settings</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>🤖 Explaina</h1>
+      <p>AI-powered explanations for any text</p>
+    </header>
+    
+    <main class="popup-content">
+      <section class="settings-section">
+        <h2>Settings</h2>
+        
+        <div class="setting-item">
+          <label for="api-url">API Endpoint:</label>
+          <input type="url" id="api-url" placeholder="http://localhost:8000/explain" />
+        </div>
+        
+        <div class="setting-item">
+          <label for="explanation-style">Explanation Style:</label>
+          <select id="explanation-style">
+            <option value="simple">Simple</option>
+            <option value="technical">Technical</option>
+            <option value="detailed">Detailed</option>
+          </select>
+        </div>
+        
+        <div class="setting-item">
+          <label class="checkbox-label">
+            <input type="checkbox" id="auto-hide" checked />
+            <span>Auto-hide tooltips after 10 seconds</span>
+          </label>
+        </div>
+        
+        <div class="setting-item">
+          <label class="checkbox-label">
+            <input type="checkbox" id="enable-caching" />
+            <span>Cache explanations (coming soon)</span>
+          </label>
+        </div>
+      </section>
+      
+      <section class="info-section">
+        <h2>How to Use</h2>
+        <ol>
+          <li>Select any text on a webpage</li>
+          <li>Click the "🤖 Explain" button that appears</li>
+          <li>Get instant AI-powered explanations</li>
+        </ol>
+      </section>
+      
+      <section class="status-section">
+        <h2>Status</h2>
+        <div class="status-item">
+          <span class="status-label">API Connection:</span>
+          <span class="status-value" id="api-status">Checking...</span>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="popup-footer">
+      <button id="save-settings" class="btn-primary">Save Settings</button>
+      <button id="test-connection" class="btn-secondary">Test Connection</button>
+    </footer>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 

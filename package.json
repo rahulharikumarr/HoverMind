@@ -1,0 +1,31 @@
+{
+  "name": "explaina-extension",
+  "version": "1.0.0",
+  "description": "AI-powered browser extension for explaining selected text",
+  "main": "content.js",
+  "scripts": {
+    "build": "echo 'No build process needed for this extension'",
+    "test": "echo 'No tests specified'",
+    "dev": "echo 'Load extension in Chrome/Edge developer mode'",
+    "backend": "python backend_example.py"
+  },
+  "keywords": [
+    "browser-extension",
+    "ai",
+    "explanation",
+    "chrome-extension",
+    "manifest-v3"
+  ],
+  "author": "Explaina Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/explaina-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/explaina-extension/issues"
+  },
+  "homepage": "https://github.com/yourusername/explaina-extension#readme",
+  "devDependencies": {},
+  "dependencies": {}
+} 

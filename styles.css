@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html, body, * {
+  font-family: 'Tinos', serif !important;
+}
+
+/**
+ * Explaina Extension Styles
+ * Minimal, clean styling for the explain button and tooltip
+ */
+
+/* Explain Button */
+.explaina-button {
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: all 0.15s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  user-select: none;
+  pointer-events: auto;
+  backdrop-filter: blur(8px);
+  letter-spacing: 0.025em;
+}
+
+.explaina-button:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.explaina-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Tooltip Container */
+.explaina-tooltip {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  max-width: 380px;
+  min-width: 280px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #374151;
+  overflow: hidden;
+  animation: explaina-fade-in 0.2s ease-out;
+  backdrop-filter: blur(12px);
+}
+
+/* Tooltip Header */
+.explaina-tooltip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  font-weight: 600;
+  color: #374151;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.explaina-tooltip-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Close Button */
+.explaina-close-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.explaina-close-btn:hover {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* Tooltip Content */
+.explaina-tooltip-content {
+  padding: 16px;
+  max-height: 280px;
+  overflow-y: auto;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  color: #4b5563;
+}
+
+/* Error State */
+.explaina-tooltip.explaina-error {
+  border-left: 3px solid #ef4444;
+}
+
+.explaina-tooltip.explaina-error .explaina-tooltip-header {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* Scrollbar Styling */
+.explaina-tooltip-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.explaina-tooltip-content::-webkit-scrollbar-track {
+  background: #f9fafb;
+  border-radius: 2px;
+}
+
+.explaina-tooltip-content::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 2px;
+}
+
+.explaina-tooltip-content::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Animations */
+@keyframes explaina-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .explaina-tooltip {
+    max-width: calc(100vw - 40px);
+    min-width: 280px;
+    margin: 0 20px;
+  }
+  
+  .explaina-button {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+}
+
+/* Ensure our elements are always on top */
+.explaina-button,
+.explaina-tooltip {
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  pointer-events: auto !important;
+}
+
+/* Prevent text selection on our UI elements */
+.explaina-button,
+.explaina-tooltip,
+.explaina-tooltip * {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Only allow text selection in the content area */
+.explaina-tooltip-content {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+} 

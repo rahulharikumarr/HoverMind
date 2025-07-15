@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Explaina",
+  "version": "1.0.0",
+  "description": "AI-powered explanations for highlighted text on any webpage",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://localhost:8000/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Explaina"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+} 
